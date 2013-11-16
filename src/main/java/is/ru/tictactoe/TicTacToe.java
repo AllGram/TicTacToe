@@ -34,6 +34,21 @@ public class TicTacToe {
 		}
 	}
 
+	// Checks who is winner
+	public boolean winningRow(){
+		if(grid[0] == grid[1] && grid[1] == grid[2]){
+			return true;
+		}
+		if(grid[3] == grid[4] && grid[4] == grid[5]){
+			return true;
+		}
+		if(grid[6] == grid[7] && grid[7] == grid[8]){
+			return true;
+		}
+		return false;
+	}
+
+
 }
 
 
