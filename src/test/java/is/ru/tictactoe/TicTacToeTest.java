@@ -11,14 +11,9 @@ public class TicTacToeTest {
 
     @Test
     public void testConstructorGrid() {
-
     	TicTacToe test = new TicTacToe();
-    	// test the x.length
+    	// test the length of the array grid
         assertEquals(3, test.grid.length);
-        // test the y.lenght
-        for(int i = 0; i < 3; i++){
-        	assertEquals(3, test.grid[i].length);
-        }
     }
     
     @Test
@@ -31,10 +26,8 @@ public class TicTacToeTest {
     @Test
     public void testIsGridFullOfLines() {
     	TicTacToe test = new TicTacToe();
-    	for (int i = 0; i < 3; i++){
-			for (int j = 0; j < 3; j++){
-				assertEquals("-", Character.toString(test.grid[i][j]));	
-			}
+    	for (int i = 0; i < 9; i++){
+			assertEquals("-", Character.toString(test.grid[i]));
 		}
     }
     
