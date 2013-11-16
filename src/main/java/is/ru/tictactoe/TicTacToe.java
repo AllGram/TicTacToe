@@ -25,4 +25,22 @@ public class TicTacToe {
 			}
 		}
 	}
+
+	// prints out the TicTacToe board
+	public void print()
+	{
+		System.out.println();
+		System.out.println("Current status:");
+		for (int i = 0; i < 3; i++)
+		{
+			for (int j = 0; j < 3; j++)
+			{
+				System.out.print(grid[i][j] + " ");
+			}
+			System.out.println();
+		}
+		System.out.println();
+	}
 }
+
+
