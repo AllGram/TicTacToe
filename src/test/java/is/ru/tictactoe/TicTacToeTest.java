@@ -21,7 +21,6 @@ public class TicTacToeTest {
         }
     }
     
-
     @Test
     public void testConstructorPlayer() {
     	// Player one should start
@@ -38,12 +37,5 @@ public class TicTacToeTest {
 			}
 		}
     }
-/*
-    @Test
-    public void testPlayInput() {
-    	TicTacToe test = new TicTacToe();
-
-    	assertEquals();
-    }
-*/
+    
 } 

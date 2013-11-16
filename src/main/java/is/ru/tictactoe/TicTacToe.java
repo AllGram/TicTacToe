@@ -28,7 +28,7 @@ public class TicTacToe {
 	}
 
 	// prints out the TicTacToe board
-	private void print(){
+	public void print(){
 		System.out.println();
 		System.out.println("Current status:");
 		for (int i = 0; i < 3; i++)
@@ -46,7 +46,11 @@ public class TicTacToe {
     // The play function. The 
 	public void play(){
 		Scanner in = new Scanner(System.in);
-
+		int xnew = 0;
+		int ynew = 0;
+		//x = in.nextInt();
+		//y = in.nextInt();
+		grid[xnew][ynew] = 'X';
 	}
 
 
