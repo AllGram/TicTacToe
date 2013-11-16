@@ -18,7 +18,7 @@ public class TicTacToe {
 
 	private void fillWithChar(){
 		for (int i = 0; i < 9; i++){
-			grid[i] = "-";
+			grid[i] = '-';
 		}
 	}
 

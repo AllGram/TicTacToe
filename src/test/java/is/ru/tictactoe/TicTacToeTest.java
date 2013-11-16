@@ -13,7 +13,7 @@ public class TicTacToeTest {
     public void testConstructorGrid() {
     	TicTacToe test = new TicTacToe();
     	// test the length of the array grid
-        assertEquals(3, test.grid.length);
+        assertEquals(9, test.grid.length);
     }
     
     @Test
