@@ -31,11 +31,42 @@ public class TicTacToeTest {
 		}
     }
 
+    // test if the input is in valid size (valid grid)
     @Test
-    public void testCheckIfValid() {
+    public void testCheckIfValidSize() {
     	TicTacToe test = new TicTacToe();
     	int pos = 10;
     	char sympol = 'x';
     	assertEquals(false, test.checkIfValid(10, sympol)); 
+   	}
+
+   	//check whether the grid is empty or not 
+   	@Test
+    public void testCheckIfValidCharInPos() {
+    	TicTacToe test = new TicTacToe();
+    	// put in dummie data
+    	test.grid[0] = 'x';
+    	test.grid[1] = 'o';
+    	test.grid[2] = '-';
+
+    	test.grid[3] = '-';
+    	test.grid[4] = 'x';
+    	test.grid[5] = '-';
+
+    	test.grid[6] = 'o';
+    	test.grid[7] = 'x';
+    	test.grid[8] = 'o';
+
+    	assertEquals(false, test.checkIfValid(0, 'x'));
+    	assertEquals(false, test.checkIfValid(1, 'x'));
+    	assertEquals(true, test.checkIfValid(2, 'x'));
+
+    	assertEquals(true, test.checkIfValid(3, 'x'));
+    	assertEquals(false, test.checkIfValid(4, 'x'));
+    	assertEquals(true, test.checkIfValid(5, 'x'));
+
+    	assertEquals(false, test.checkIfValid(6, 'x'));
+    	assertEquals(false, test.checkIfValid(7, 'x'));
+    	assertEquals(false, test.checkIfValid(8, 'x'));
    	}
 } 

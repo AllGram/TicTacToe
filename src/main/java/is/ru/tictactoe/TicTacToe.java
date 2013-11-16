@@ -36,7 +36,12 @@ public class TicTacToe {
 
 	// function to check if the input is valid
 	public boolean checkIfValid( int pos ,char sympol ){
+		// check if the grid is whithin the limit of the array
 		if ( pos > 8 || pos < 0){
+			return false;
+		}
+		// check if the grid is empty
+		if ( grid[pos] != '-'){
 			return false;
 		}
 		return true;
