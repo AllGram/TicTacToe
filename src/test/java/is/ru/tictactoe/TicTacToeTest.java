@@ -77,4 +77,16 @@ public class TicTacToeTest {
     	test.x = 8;
     	assertEquals(false, test.checkIfValidInput());
    	}
+
+   	@Test
+    public void testChangePlayer() {
+    	TicTacToe test = new TicTacToe();
+    	test.player = 1;
+    	test.changePlayer();
+    	assertEquals(2, test.player);
+    	test.changePlayer();
+    	assertEquals(1, test.player); 
+   	}
+
+
 } 

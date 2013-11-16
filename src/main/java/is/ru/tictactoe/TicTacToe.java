@@ -47,6 +47,18 @@ public class TicTacToe {
 		return true;
 	}
 
+	public void changePlayer()
+	{
+		if (player == 1) player = 2;
+		else player = 1;
+	}
+
+	public static void main(String[] args) {
+		TicTacToe test = new TicTacToe();
+		System.out.println("Hello and welcome to a game of Tic Tac Toe");
+		System.out.println();
+	}
+
 }
 
 
