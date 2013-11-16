@@ -10,7 +10,7 @@ import org.junit.Test;
 public class TicTacToeTest {
 
     @Test
-    public void testConstructor() {
+    public void testConstructorGrid() {
 
     	TicTacToe test = new TicTacToe();
     	// test the x.length
@@ -23,6 +23,13 @@ public class TicTacToeTest {
     
 
     @Test
+    public void testConstructorPlayer() {
+    	// Player one should start
+    	TicTacToe test = new TicTacToe();
+        assertEquals(1, test.player);
+    }
+
+    @Test
     public void testIsGridFullOfLines() {
     	TicTacToe test = new TicTacToe();
     	for (int i = 0; i < 3; i++){
@@ -31,4 +38,12 @@ public class TicTacToeTest {
 			}
 		}
     }
+/*
+    @Test
+    public void testPlayInput() {
+    	TicTacToe test = new TicTacToe();
+
+    	assertEquals();
+    }
+*/
 } 

@@ -1,9 +1,12 @@
 package is.ru.tictactoe;
 
+import java.util.Scanner;
+
 public class TicTacToe {
 	
-	int x = 0, y = 0;
+	int x , y;
 	char grid[][];
+	int player;
 	
     
 	public TicTacToe() {
@@ -11,24 +14,21 @@ public class TicTacToe {
 		for (int i = 0; i < 3; i++){
 			grid[i] = new char[3];
 		}
+		player = 1;
 		fillWithChar();
 	}
 
 
-	private void fillWithChar()
-	{
-		for (int i = 0; i < 3; i++)
-		{
-			for (int j = 0; j < 3; j++)
-			{
+	private void fillWithChar(){
+		for (int i = 0; i < 3; i++){
+			for (int j = 0; j < 3; j++){
 				grid[i][j] = '-';
 			}
 		}
 	}
 
 	// prints out the TicTacToe board
-	public void print()
-	{
+	private void print(){
 		System.out.println();
 		System.out.println("Current status:");
 		for (int i = 0; i < 3; i++)
@@ -41,6 +41,15 @@ public class TicTacToe {
 		}
 		System.out.println();
 	}
+
+      
+    // The play function. The 
+	public void play(){
+		Scanner in = new Scanner(System.in);
+
+	}
+
+
 }
 
 
