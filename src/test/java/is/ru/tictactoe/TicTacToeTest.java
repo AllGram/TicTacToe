@@ -68,17 +68,17 @@ public class TicTacToeTest {
         for(int i = 1; i < 9; i = i + 3){
             test.grid[i] = 'X';
         }
-            assertEquals(true, test.winningRow());
+            assertEquals(true, test.winningColumn());
 
         test.grid[1] = 'O';  
         for(int i = 2; i < 9; i = i + 3){
             test.grid[i] = 'X';
         }
-            assertEquals(true, test.winningRow());
+            assertEquals(true, test.winningColumn());
 
         test.grid[2] = 'O';
         
-            assertEquals(false, test.winningRow());
+            assertEquals(false, test.winningColumn());
     }
     
 
