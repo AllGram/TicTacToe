@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class TicTacToe {
 	
-	int x , y;
+	int x;
 	char grid[];
 	int player;
 	
@@ -27,7 +27,7 @@ public class TicTacToe {
 		System.out.println();
 		System.out.println("Current status:");
 		for (int i = 0; i < 9; i++){
-			System.out.println();
+			System.out.print(i);
 			if(i == 2 || i == 5 || i == 8){
 				System.out.println();
 			}
@@ -48,6 +48,19 @@ public class TicTacToe {
 		return false;
 	}
 
+
+	// function to check if the input is valid
+	public boolean checkIfValidInput(){
+		// check if the grid is whithin the limit of the array
+		if ( x > 8 || x < 0){
+			return false;
+		}
+		// check if the grid is empty
+		if ( grid[x] != '-'){
+			return false;
+		}
+		return true;
+	}
 
 }
 

@@ -30,6 +30,7 @@ public class TicTacToeTest {
 			assertEquals("-", Character.toString(test.grid[i]));
 		}
     }
+
     @Test
     public void testIsWinningRow() {
         TicTacToe test = new TicTacToe();
@@ -55,4 +56,53 @@ public class TicTacToeTest {
             assertEquals(false, test.winningRow());
     }
     
+
+
+    // test if the input is in valid size (valid grid)
+    @Test
+    public void testCheckIfValidSize() {
+    	TicTacToe test = new TicTacToe();
+    	test.x = 10;
+    	assertEquals(false, test.checkIfValidInput()); 
+   	}
+
+   	//check whether the grid is empty or not 
+   	@Test
+    public void testCheckIfValidCharInPos() {
+    	TicTacToe test = new TicTacToe();
+    	// put in dummie data
+    	test.grid[0] = 'x';
+    	test.grid[1] = 'o';
+    	test.grid[2] = '-';
+
+    	test.grid[3] = '-';
+    	test.grid[4] = 'x';
+    	test.grid[5] = '-';
+
+    	test.grid[6] = 'o';
+    	test.grid[7] = 'x';
+    	test.grid[8] = 'o';
+
+    	test.x = 0;
+    	assertEquals(false, test.checkIfValidInput());
+    	test.x = 1;
+    	assertEquals(false, test.checkIfValidInput());
+    	test.x = 2;
+    	assertEquals(true, test.checkIfValidInput());
+
+    	test.x = 3;
+    	assertEquals(true, test.checkIfValidInput());
+    	test.x = 4;
+    	assertEquals(false, test.checkIfValidInput());
+    	test.x = 5;
+    	assertEquals(true, test.checkIfValidInput());
+
+    	test.x = 6;
+    	assertEquals(false, test.checkIfValidInput());
+    	test.x = 7;
+    	assertEquals(false, test.checkIfValidInput());
+    	test.x = 8;
+    	assertEquals(false, test.checkIfValidInput());
+   	}
+
 } 
