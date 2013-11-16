@@ -48,6 +48,19 @@ public class TicTacToe {
 		return false;
 	}
 
+// Checks who is winner
+	public boolean winningColumn(){
+		if(grid[0] == grid[3] && grid[3] == grid[6]){
+			return true;
+		}
+		if(grid[1] == grid[4] && grid[4] == grid[7]){
+			return true;
+		}
+		if(grid[2] == grid[5] && grid[5] == grid[8]){
+			return true;
+		}
+		return false;
+	}
 
 	// function to check if the input is valid
 	public boolean checkIfValidInput(){
