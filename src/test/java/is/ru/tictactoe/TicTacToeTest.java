@@ -31,6 +31,33 @@ public class TicTacToeTest {
 		}
     }
 
+    @Test
+    public void testIsWinningRow() {
+        TicTacToe test = new TicTacToe();
+        for(int i = 0; i < 3; i++){
+            test.grid[i] = 'X';
+        }
+            assertEquals(true, test.winningRow());
+
+        test.grid[2] = 'O';
+        for(int i = 3; i < 6; i++){
+            test.grid[i] = 'X';
+        }
+            assertEquals(true, test.winningRow());
+
+        test.grid[3] = 'O';  
+        for(int i = 6; i < 9; i++){
+            test.grid[i] = 'X';
+        }
+            assertEquals(true, test.winningRow());
+
+        test.grid[6] = 'O';
+        
+            assertEquals(false, test.winningRow());
+    }
+    
+
+
     // test if the input is in valid size (valid grid)
     @Test
     public void testCheckIfValidSize() {
@@ -87,6 +114,5 @@ public class TicTacToeTest {
     	test.changePlayer();
     	assertEquals(1, test.player); 
    	}
-
 
 } 
