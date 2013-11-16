@@ -27,11 +27,19 @@ public class TicTacToe {
 		System.out.println();
 		System.out.println("Current status:");
 		for (int i = 0; i < 9; i++){
-			System.out.println();
+			System.out.print(i);
 			if(i == 2 || i == 5 || i == 8){
 				System.out.println();
 			}
 		}
+	}
+
+	// function to check if the input is valid
+	public boolean checkIfValid( int pos ,char sympol ){
+		if ( pos > 8 || pos < 0){
+			return false;
+		}
+		return true;
 	}
 
 }

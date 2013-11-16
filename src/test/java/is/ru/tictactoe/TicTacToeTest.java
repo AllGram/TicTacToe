@@ -30,5 +30,12 @@ public class TicTacToeTest {
 			assertEquals("-", Character.toString(test.grid[i]));
 		}
     }
-    
+
+    @Test
+    public void testCheckIfValid() {
+    	TicTacToe test = new TicTacToe();
+    	int pos = 10;
+    	char sympol = 'x';
+    	assertEquals(false, test.checkIfValid(10, sympol)); 
+   	}
 } 
