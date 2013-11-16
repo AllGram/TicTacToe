@@ -35,9 +35,8 @@ public class TicTacToeTest {
     @Test
     public void testCheckIfValidSize() {
     	TicTacToe test = new TicTacToe();
-    	int pos = 10;
-    	char sympol = 'x';
-    	assertEquals(false, test.checkIfValid(10, sympol)); 
+    	test.x = 10;
+    	assertEquals(false, test.checkIfValidInput()); 
    	}
 
    	//check whether the grid is empty or not 
@@ -57,16 +56,25 @@ public class TicTacToeTest {
     	test.grid[7] = 'x';
     	test.grid[8] = 'o';
 
-    	assertEquals(false, test.checkIfValid(0, 'x'));
-    	assertEquals(false, test.checkIfValid(1, 'x'));
-    	assertEquals(true, test.checkIfValid(2, 'x'));
+    	test.x = 0;
+    	assertEquals(false, test.checkIfValidInput());
+    	test.x = 1;
+    	assertEquals(false, test.checkIfValidInput());
+    	test.x = 2;
+    	assertEquals(true, test.checkIfValidInput());
 
-    	assertEquals(true, test.checkIfValid(3, 'x'));
-    	assertEquals(false, test.checkIfValid(4, 'x'));
-    	assertEquals(true, test.checkIfValid(5, 'x'));
+    	test.x = 3;
+    	assertEquals(true, test.checkIfValidInput());
+    	test.x = 4;
+    	assertEquals(false, test.checkIfValidInput());
+    	test.x = 5;
+    	assertEquals(true, test.checkIfValidInput());
 
-    	assertEquals(false, test.checkIfValid(6, 'x'));
-    	assertEquals(false, test.checkIfValid(7, 'x'));
-    	assertEquals(false, test.checkIfValid(8, 'x'));
+    	test.x = 6;
+    	assertEquals(false, test.checkIfValidInput());
+    	test.x = 7;
+    	assertEquals(false, test.checkIfValidInput());
+    	test.x = 8;
+    	assertEquals(false, test.checkIfValidInput());
    	}
 } 
