@@ -55,9 +55,8 @@ public class TicTacToe {
 		for (int i = 0; i < 9; i++){
 			if (grid[i] == '-') return false;
 		}
-		printTie();
 		return true;
-
+	}
         // Checks who is winner
 
         // Checks if there is a winner in a column
