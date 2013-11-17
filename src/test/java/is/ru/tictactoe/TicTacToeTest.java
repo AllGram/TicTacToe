@@ -135,26 +135,35 @@ public class TicTacToeTest {
         assertEquals(false, test.winningColumn());
     }
 
+
     @Test
     public void testIsWinningDiagonal() {
+        //testing the function WinningColumn
+
         TicTacToe test = new TicTacToe();
 
-            assertEquals(false, test.winningDiagonal());
-            
+        //Check if initialized grid returns false
+        assertEquals(false, test.winningDiagonal());
+
         for(int i = 0; i < 9; i = i + 4){
             test.grid[i] = 'X';
         }
-            assertEquals(true, test.winningDiagonal());
+        //Check if returns true if win in 0-4-8 diagonal
+        assertEquals(true, test.winningDiagonal());
 
         test.grid[0] = 'O';
+
         for(int i = 2; i < 7; i = i + 2){
             test.grid[i] = 'X';
         }
-            assertEquals(true, test.winningDiagonal());
+
+        //Check if returns true if win in 2-4-6 diagonal
+        assertEquals(true, test.winningDiagonal());
 
         test.grid[2] = 'O';  
-        
-            assertEquals(false, test.winningDiagonal());
+
+        //Check is returns false if no win in neither diagonal
+        assertEquals(false, test.winningDiagonal());
     }
     
 
@@ -205,6 +214,8 @@ public class TicTacToeTest {
     	test.x = 8;
     	assertEquals(false, test.checkIfValidInput());
    	}
+
+
 
    	@Test
     public void testChangePlayer() {

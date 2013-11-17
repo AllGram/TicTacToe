@@ -36,7 +36,7 @@ public class TicTacToe {
 
 
 
-public boolean checkForWin(){
+	public boolean checkForWin(){
 		if((winningRow() == true || winningColumn() == true) || winningDiagonal() == true){
 			return true;
 		}
@@ -60,16 +60,6 @@ public boolean checkForWin(){
 		}
 		return false;
 	}
-
-
-	//check for tie
-	private boolean checkForTie() {
-		for (int i = 0; i < 9; i++){
-			if (grid[i] == '-') return false;
-		}
-		return true;
-	}
-       
 
         // Checks if there is a winner in a column
 
@@ -108,6 +98,15 @@ public boolean checkForWin(){
 		}
 		return true;
 	}
+
+	//check for tie
+	public boolean checkForTie() {
+		for (int i = 0; i < 9; i++){
+			if (grid[i] == '-') return false;
+		}
+		return true;
+	}
+       
 
 	public void changePlayer()
 	{
