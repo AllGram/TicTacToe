@@ -222,19 +222,25 @@ public class TicTacToeTest {
         //player1 inserts a symbol
         test.player = 1;
         test.x = 3;
-        test.insert();
+        if(test.checkIfValidInput()){
+            test.insert();
+        }
         assertEquals("X", Character.toString(test.grid[3]));
         // change players an let player2 insert a symbol
         test.changePlayer();
         test.x = 4;
-        test.insert();
+        if(test.checkIfValidInput()){
+            test.insert();
+        }
         assertEquals("O", Character.toString(test.grid[4]));
         // know let player one insert in grid that is not empty
         // the function check if valid should prohibit that so it 
         // should maintain the char O in grid[4]
         test.changePlayer();
         test.x = 4;
-        test.insert();
+        if(test.checkIfValidInput()){
+            test.insert();
+        }
         assertEquals("O", Character.toString(test.grid[4]));
     }
 } 

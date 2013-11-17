@@ -114,21 +114,21 @@ public class TicTacToe {
 	}
 
 	public void insert(){
-		if(checkIfValidInput()){
-			if(player == 1){
-				grid[x] = 'X';	
-			}
-			else{
-				grid[x] = 'O';
-			}
+		if(player == 1){
+			grid[x] = 'X';	
+		}
+		else{
+			grid[x] = 'O';
 		}
 	}
 
    
 	public void play(){
 		Scanner in = new Scanner(System.in);
+		boolean validInput;
 		
 		while(!checkForWin() && !checkForTie()){
+			validInput = false;
 			print();
 			System.out.println("Player" + player + " it's your turn");
 
@@ -136,12 +136,16 @@ public class TicTacToe {
 			System.out.println("Add your next move: ");
 			System.out.print("What grid do you want (0-8): ");
 			x = in.nextInt();
-			}while (!checkIfValidInput());	
-			
+			if(checkIfValidInput()){
+				insert();
+				validInput = true;
+			};
+			}while (!validInput);	
 			changePlayer();			
 		}
 		in.close();
 	}
+	
 	
 
 	public static void main(String[] args) {
