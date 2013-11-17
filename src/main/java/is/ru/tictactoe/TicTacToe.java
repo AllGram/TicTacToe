@@ -34,6 +34,7 @@ public class TicTacToe {
 		}
 	}
 
+
 /*
 public boolean checkForWin(){
 		if(winningRow() == true || winningColumn() == true ){
@@ -43,6 +44,9 @@ public boolean checkForWin(){
 	}
 */
 	// Checks who is winner
+
+	// Checks if there is a winner in a row
+
 	public boolean winningRow(){
 		
 		if(grid[0] != '-' && grid[0] == grid[1] && grid[1] == grid[2]){
@@ -57,7 +61,18 @@ public boolean checkForWin(){
 		return false;
 	}
 
-	// Checks who is winner
+
+	//check for tie
+	private boolean checkForTie() {
+		for (int i = 0; i < 9; i++){
+			if (grid[i] == '-') return false;
+		}
+		return true;
+	}
+       
+
+        // Checks if there is a winner in a column
+
 	public boolean winningColumn(){
 		if(grid[0] != '-' && grid[0] == grid[3] && grid[3] == grid[6]){
 			return true;
@@ -66,6 +81,16 @@ public boolean checkForWin(){
 			return true;
 		}
 		if(grid[2] != '-' &&grid[2] == grid[5] && grid[5] == grid[8]){
+			return true;
+		}
+		return false;
+	}
+        // Checks if there is a winner diagonally
+	public boolean winningDiagonal(){
+		if(grid[0] != '-' && grid[0] == grid[4] && grid[4] == grid[8]){
+			return true;
+		}		
+		if(grid[2] != '-' && grid[2] == grid[4] && grid[4] == grid[6]){
 			return true;
 		}
 		return false;
@@ -82,6 +107,18 @@ public boolean checkForWin(){
 			return false;
 		}
 		return true;
+	}
+
+	public void changePlayer()
+	{
+		if (player == 1) player = 2;
+		else player = 1;
+	}
+
+	public static void main(String[] args) {
+		TicTacToe test = new TicTacToe();
+		System.out.println("Hello and welcome to a game of Tic Tac Toe");
+		System.out.println();
 	}
 
 }

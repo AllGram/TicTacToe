@@ -93,6 +93,7 @@ public class TicTacToeTest {
     public void testIsWinningColumn() {
         //testing the function WinningColumn
         TicTacToe test = new TicTacToe();
+
         //check if grid full of '-' return false
         assertEquals(false, test.winningColumn());
             
@@ -123,6 +124,28 @@ public class TicTacToeTest {
         //checking if grid with no column full of same
         //symbol returns false
         assertEquals(false, test.winningColumn());
+    }
+
+    @Test
+    public void testIsWinningDiagonal() {
+        TicTacToe test = new TicTacToe();
+
+            assertEquals(false, test.winningDiagonal());
+            
+        for(int i = 0; i < 9; i = i + 4){
+            test.grid[i] = 'X';
+        }
+            assertEquals(true, test.winningDiagonal());
+
+        test.grid[0] = 'O';
+        for(int i = 2; i < 7; i = i + 2){
+            test.grid[i] = 'X';
+        }
+            assertEquals(true, test.winningDiagonal());
+
+        test.grid[2] = 'O';  
+        
+            assertEquals(false, test.winningDiagonal());
     }
     
 
@@ -172,6 +195,16 @@ public class TicTacToeTest {
     	assertEquals(false, test.checkIfValidInput());
     	test.x = 8;
     	assertEquals(false, test.checkIfValidInput());
+   	}
+
+   	@Test
+    public void testChangePlayer() {
+    	TicTacToe test = new TicTacToe();
+    	test.player = 1;
+    	test.changePlayer();
+    	assertEquals(2, test.player);
+    	test.changePlayer();
+    	assertEquals(1, test.player); 
    	}
 
 } 
