@@ -34,6 +34,14 @@ public class TicTacToe {
 		}
 	}
 
+/*
+public boolean checkForWin(){
+		if(winningRow() == true || winningColumn() == true ){
+			return true;
+		}
+		return false;
+	}
+*/
 	// Checks who is winner
 	public boolean winningRow(){
 		
@@ -49,7 +57,7 @@ public class TicTacToe {
 		return false;
 	}
 
-// Checks who is winner
+	// Checks who is winner
 	public boolean winningColumn(){
 		if(grid[0] != '-' && grid[0] == grid[3] && grid[3] == grid[6]){
 			return true;
