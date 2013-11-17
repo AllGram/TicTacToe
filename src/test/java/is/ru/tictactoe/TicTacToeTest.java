@@ -65,6 +65,7 @@ public class TicTacToeTest {
     @Test
     public void testIsWinningRow() {
         TicTacToe test = new TicTacToe();
+
         //checking if grid full of '-' returns false
         assertEquals(false, test.winningRow());
 

@@ -115,10 +115,14 @@ public boolean checkForWin(){
 		else player = 1;
 	}
 
-	public static void main(String[] args) {
-		TicTacToe test = new TicTacToe();
+		public static void main(String[] args) {
 		System.out.println("Hello and welcome to a game of Tic Tac Toe");
 		System.out.println();
+		System.out.println("The playground is described below");
+		System.out.println("_________");
+		System.out.println("| 0 1 2 |");
+		System.out.println("| 3 4 5 |");
+		System.out.println("| 6 7 8 |");
 	}
 
 }
