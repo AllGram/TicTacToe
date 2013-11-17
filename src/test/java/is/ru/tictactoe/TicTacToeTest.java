@@ -30,7 +30,7 @@ public class TicTacToeTest {
 			assertEquals("-", Character.toString(test.grid[i]));
 		}
     }
-/*
+
     @Test 
     public void testcheckForWin() {
 
@@ -46,14 +46,22 @@ public class TicTacToeTest {
         assertEquals(true, test.checkForWin());
         
         test.grid[1]='O';
-        for(int i = 0; i < 6; i = i + 3){
+        for(int i = 0; i < 9; i = i + 3){
             test.grid[i] = 'X';
         }
         //checking if grid wiht one column full of 'X'
         //returns true
         assertEquals(true, test.checkForWin());
+
+        test.grid[6] = 'O';
+        for(int i = 0; i < 9; i = i + 4){
+            test.grid[i] = 'X';
+        }
+        //check if grid with one diagonal line full of 'X'
+        //returns true
+        assertEquals(true, test.checkForWin());
     }
-    */
+    
     @Test
     public void testIsWinningRow() {
         TicTacToe test = new TicTacToe();

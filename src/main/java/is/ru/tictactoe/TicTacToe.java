@@ -35,14 +35,14 @@ public class TicTacToe {
 	}
 
 
-/*
+
 public boolean checkForWin(){
-		if(winningRow() == true || winningColumn() == true ){
+		if((winningRow() == true || winningColumn() == true) || winningDiagonal() == true){
 			return true;
 		}
 		return false;
 	}
-*/
+
 	// Checks who is winner
 
 	// Checks if there is a winner in a row
