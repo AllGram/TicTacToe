@@ -31,71 +31,41 @@ public class TicTacToeTest {
 		}
     }
 
-    @Test 
-    public void testcheckForWin() {
-
-        TicTacToe test = new TicTacToe();
-        //checking if grid full of '-' returns false
-        assertEquals(false, test.checkForWin()); 
-        for(int i=0; i<3; i++)
-        {
-            test.grid[i] = 'X';
-        }
-        //checking if grid with one row full of 'X'
-        //returns true
-        assertEquals(true, test.checkForWin());
-        
-        test.grid[1]='O';
-        for(int i = 0; i < 9; i = i + 3){
-            test.grid[i] = 'X';
-        }
-        //checking if grid wiht one column full of 'X'
-        //returns true
-        assertEquals(true, test.checkForWin());
-
-        test.grid[6] = 'O';
-        for(int i = 0; i < 9; i = i + 4){
-            test.grid[i] = 'X';
-        }
-        //check if grid with one diagonal line full of 'X'
-        //returns true
-        assertEquals(true, test.checkForWin());
-    }
     
     @Test
     public void testIsWinningRow() {
         TicTacToe test = new TicTacToe();
 
         //checking if grid full of '-' returns false
-        assertEquals(false, test.winningRow());
+        assertEquals(false, test.checkForWin());
 
         for(int i = 0; i < 3; i++){
             test.grid[i] = 'X';
         }
         //checking if grid with first row full of 'X'
         //returns true
-        assertEquals(true, test.winningRow());
+        assertEquals(true, test.checkForWin());
 
-        test.grid[2] = 'O';
+        test.initializedGrid();
         for(int i = 3; i < 6; i++){
             test.grid[i] = 'X';
         }
         //checking if grid with second row full of 'X'
         //returns true
-        assertEquals(true, test.winningRow());
+        assertEquals(true, test.checkForWin());
 
-        test.grid[3] = 'O';  
+        test.initializedGrid(); 
         for(int i = 6; i < 9; i++){
             test.grid[i] = 'X';
         }
         //checking if grid with third row full of 'X'
         //returns true
-        assertEquals(true, test.winningRow());
+        assertEquals(true, test.checkForWin());
 
-        test.grid[6] = 'O';
+        test.initializedGrid();
         //checking if grid with no row full of sama symbol
         //returns false
-        assertEquals(false, test.winningRow());
+        assertEquals(false, test.checkForWin());
     }
 
     @Test
@@ -104,35 +74,35 @@ public class TicTacToeTest {
         TicTacToe test = new TicTacToe();
 
         //check if grid full of '-' return false
-        assertEquals(false, test.winningColumn());
+        assertEquals(false, test.checkForWin());
             
         for(int i = 0; i < 9; i = i + 3){
             test.grid[i] = 'X';
         }
         //checking if grid with first column full of 'X'
         //returns true
-        assertEquals(true, test.winningColumn());
+        assertEquals(true, test.checkForWin());
 
-        test.grid[0] = 'O';
+        test.initializedGrid();
         for(int i = 1; i < 9; i = i + 3){
             test.grid[i] = 'X';
         }
         //checking if grid with second column full of 'X'
         //returns true
-        assertEquals(true, test.winningColumn());
+        assertEquals(true, test.checkForWin());
 
-        test.grid[1] = 'O';  
+        test.initializedGrid(); 
         for(int i = 2; i < 9; i = i + 3){
             test.grid[i] = 'X';
         }
         //checking if grid with third column full of 'X'
         //returns true
-        assertEquals(true, test.winningColumn());
+        assertEquals(true, test.checkForWin());
 
-        test.grid[2] = 'O';
+        test.initializedGrid();
         //checking if grid with no column full of same
         //symbol returns false
-        assertEquals(false, test.winningColumn());
+        assertEquals(false, test.checkForWin());
     }
 
 
@@ -143,27 +113,25 @@ public class TicTacToeTest {
         TicTacToe test = new TicTacToe();
 
         //Check if initialized grid returns false
-        assertEquals(false, test.winningDiagonal());
+        assertEquals(false, test.checkForWin());
 
         for(int i = 0; i < 9; i = i + 4){
             test.grid[i] = 'X';
         }
         //Check if returns true if win in 0-4-8 diagonal
-        assertEquals(true, test.winningDiagonal());
+        assertEquals(true, test.checkForWin());
 
-        test.grid[0] = 'O';
-
+        test.initializedGrid();
         for(int i = 2; i < 7; i = i + 2){
             test.grid[i] = 'X';
         }
 
         //Check if returns true if win in 2-4-6 diagonal
-        assertEquals(true, test.winningDiagonal());
+        assertEquals(true, test.checkForWin());
 
-        test.grid[2] = 'O';  
-
+        test.initializedGrid();  
         //Check is returns false if no win in neither diagonal
-        assertEquals(false, test.winningDiagonal());
+        assertEquals(false, test.checkForWin());
     }
     
 

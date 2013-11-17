@@ -12,11 +12,11 @@ public class TicTacToe {
 	public TicTacToe() {
 		grid = new char[9];
 		player = 1;
-		fillWithChar();
+		initializedGrid();
 	}
 
 
-	private void fillWithChar(){
+	public void initializedGrid(){
 		for (int i = 0; i < 9; i++){
 			grid[i] = '-';
 		}
@@ -35,18 +35,17 @@ public class TicTacToe {
 	}
 
 
-
+	// Checks who is winner
 	public boolean checkForWin(){
 		if((winningRow() == true || winningColumn() == true) || winningDiagonal() == true){
 			return true;
 		}
 		return false;
 	}
-	// Checks who is winner
 
 	// Checks if there is a winner in a row
 
-	public boolean winningRow(){
+	private boolean winningRow(){
 		
 		if(grid[0] != '-' && grid[0] == grid[1] && grid[1] == grid[2]){
 			return true;
@@ -62,7 +61,7 @@ public class TicTacToe {
 
         // Checks if there is a winner in a column
 
-	public boolean winningColumn(){
+	private boolean winningColumn(){
 		if(grid[0] != '-' && grid[0] == grid[3] && grid[3] == grid[6]){
 			return true;
 		}
@@ -75,7 +74,7 @@ public class TicTacToe {
 		return false;
 	}
         // Checks if there is a winner diagonally
-	public boolean winningDiagonal(){
+	private boolean winningDiagonal(){
 		if(grid[0] != '-' && grid[0] == grid[4] && grid[4] == grid[8]){
 			return true;
 		}		
