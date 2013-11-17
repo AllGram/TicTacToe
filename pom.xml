@@ -36,7 +36,7 @@
          <configuration>
            <archive>
              <manifest>
-               <mainClass>is.ru.TicTacToe.TicTacToe</mainClass>
+               <mainClass>is.ru.tictactoe.TicTacToe</mainClass>
              </manifest>
            </archive>
            <descriptorRefs>
