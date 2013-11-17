@@ -48,6 +48,14 @@ public class TicTacToe {
 		return false;
 	}
 
+	//check for tie
+	private boolean checkForTie() {
+		for (int i = 0; i < 9; i++){
+			if (grid[i] == '-') return false;
+		}
+		printTie();
+		return true;
+	}
 
 	// function to check if the input is valid
 	public boolean checkIfValidInput(){
