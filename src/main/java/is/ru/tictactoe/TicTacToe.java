@@ -128,7 +128,7 @@ public class TicTacToe {
 		while(!checkForWin() && !checkForTie()){
 			validInput = false;
 			print();
-			System.out.println("Player" + player + " it's your turn");
+			System.out.println("Player " + player + " it's your turn");
 
 			do{
 			System.out.println("Add your next move: ");
@@ -141,6 +141,17 @@ public class TicTacToe {
 			}while (!validInput);	
 			changePlayer();			
 		}
+
+		if(checkForWin()){
+			print();
+			System.out.println();
+			System.out.println("Player " + player + " WON!!!!! ");
+		}
+		else if(checkForTie()){
+			print();
+			System.out.println("We have a TIE!!!!!! ");
+		}
+
 		in.close();
 	}
 	
