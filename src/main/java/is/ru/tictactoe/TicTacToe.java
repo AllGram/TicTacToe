@@ -27,7 +27,7 @@ public class TicTacToe {
 		System.out.println();
 		System.out.println("Current status:");
 		for (int i = 0; i < 9; i++){
-			System.out.print(i);
+			System.out.print(" " + grid[i] + " ");
 			if(i == 2 || i == 5 || i == 8){
 				System.out.println();
 			}
