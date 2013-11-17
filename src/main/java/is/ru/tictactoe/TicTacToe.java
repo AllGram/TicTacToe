@@ -60,16 +60,6 @@ public class TicTacToe {
 		return false;
 	}
 
-
-	//check for tie
-	private boolean checkForTie() {
-		for (int i = 0; i < 9; i++){
-			if (grid[i] == '-') return false;
-		}
-		return true;
-	}
-       
-
         // Checks if there is a winner in a column
 
 	public boolean winningColumn(){
@@ -108,6 +98,14 @@ public class TicTacToe {
 		return true;
 	}
 
+	//check for tie
+	public boolean checkForTie() {
+		for (int i = 0; i < 9; i++){
+			if (grid[i] == '-') return false;
+		}
+		return true;
+	}
+     
 	public void changePlayer(){
 		if (player == 1) player = 2;
 		else player = 1;
