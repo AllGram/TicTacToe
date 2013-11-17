@@ -181,17 +181,17 @@ public class TicTacToeTest {
     public void testCheckIfValidCharInPos() {
     	TicTacToe test = new TicTacToe();
     	// put in dummie data
-    	test.grid[0] = 'x';
-    	test.grid[1] = 'o';
+    	test.grid[0] = 'X';
+    	test.grid[1] = 'O';
     	test.grid[2] = '-';
 
     	test.grid[3] = '-';
-    	test.grid[4] = 'x';
+    	test.grid[4] = 'X';
     	test.grid[5] = '-';
 
-    	test.grid[6] = 'o';
-    	test.grid[7] = 'x';
-    	test.grid[8] = 'o';
+    	test.grid[6] = 'O';
+    	test.grid[7] = 'X';
+    	test.grid[8] = 'O';
 
     	test.x = 0;
     	assertEquals(false, test.checkIfValidInput());
@@ -227,4 +227,25 @@ public class TicTacToeTest {
     	assertEquals(1, test.player); 
    	}
 
+    @Test
+    public void testInsert() {
+        TicTacToe test = new TicTacToe();
+        //player1 inserts a symbol
+        test.player = 1;
+        test.x = 3;
+        test.insert();
+        assertEquals("X", Character.toString(test.grid[3]));
+        // change players an let player2 insert a symbol
+        test.changePlayer();
+        test.x = 4;
+        test.insert();
+        assertEquals("O", Character.toString(test.grid[4]));
+        // know let player one insert in grid that is not empty
+        // the function check if valid should prohibit that so it 
+        // should maintain the char O in grid[4]
+        test.changePlayer();
+        test.x = 4;
+        test.insert();
+        assertEquals("O", Character.toString(test.grid[4]));
+    }
 } 

@@ -42,7 +42,6 @@ public class TicTacToe {
 		}
 		return false;
 	}
-
 	// Checks who is winner
 
 	// Checks if there is a winner in a row
@@ -106,15 +105,45 @@ public class TicTacToe {
 		}
 		return true;
 	}
-       
-
-	public void changePlayer()
-	{
+     
+	public void changePlayer(){
 		if (player == 1) player = 2;
 		else player = 1;
 	}
 
-		public static void main(String[] args) {
+	public void insert(){
+		if(checkIfValidInput()){
+			if(player == 1){
+				grid[x] = 'X';	
+			}
+			else{
+				grid[x] = 'O';
+			}
+		}
+	}
+
+   
+	public void play(){
+		Scanner in = new Scanner(System.in);
+		
+		while(!checkForWin() && !checkForTie()){
+			print();
+			System.out.println("Player" + player + " it's your turn");
+
+			do{
+			System.out.println("Add your next move: ");
+			System.out.print("What grid do you want (0-8): ");
+			x = in.nextInt();
+			}while (!checkIfValidInput());	
+			
+			changePlayer();			
+		}
+		in.close();
+	}
+	
+
+	public static void main(String[] args) {
+		TicTacToe mainTest = new TicTacToe();
 		System.out.println("Hello and welcome to a game of Tic Tac Toe");
 		System.out.println();
 		System.out.println("The playground is described below");
@@ -122,8 +151,8 @@ public class TicTacToe {
 		System.out.println("| 0 1 2 |");
 		System.out.println("| 3 4 5 |");
 		System.out.println("| 6 7 8 |");
+		mainTest.play();
 	}
-
 }
 
 
