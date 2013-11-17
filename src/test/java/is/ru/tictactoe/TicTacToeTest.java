@@ -34,6 +34,9 @@ public class TicTacToeTest {
     @Test
     public void testIsWinningRow() {
         TicTacToe test = new TicTacToe();
+
+            assertEquals(false, test.winningRow());
+
         for(int i = 0; i < 3; i++){
             test.grid[i] = 'X';
         }
@@ -54,6 +57,34 @@ public class TicTacToeTest {
         test.grid[6] = 'O';
         
             assertEquals(false, test.winningRow());
+    }
+
+    @Test
+    public void testIsWinningColumn() {
+        TicTacToe test = new TicTacToe();
+
+            assertEquals(false, test.winningRow());
+            
+        for(int i = 0; i < 9; i = i + 3){
+            test.grid[i] = 'X';
+        }
+            assertEquals(true, test.winningColumn());
+
+        test.grid[0] = 'O';
+        for(int i = 1; i < 9; i = i + 3){
+            test.grid[i] = 'X';
+        }
+            assertEquals(true, test.winningColumn());
+
+        test.grid[1] = 'O';  
+        for(int i = 2; i < 9; i = i + 3){
+            test.grid[i] = 'X';
+        }
+            assertEquals(true, test.winningColumn());
+
+        test.grid[2] = 'O';
+        
+            assertEquals(false, test.winningColumn());
     }
     
 
