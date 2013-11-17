@@ -143,6 +143,7 @@ public class TicTacToe {
 
 		if(checkForWin()){
 			print();
+			changePlayer();
 			System.out.println();
 			System.out.println("Player " + player + " WON!!!!! ");
 		}
