@@ -36,13 +36,14 @@ public class TicTacToe {
 
 	// Checks who is winner
 	public boolean winningRow(){
-		if(grid[0] == grid[1] && grid[1] == grid[2]){
+		
+		if(grid[0] != '-' && grid[0] == grid[1] && grid[1] == grid[2]){
 			return true;
 		}
-		if(grid[3] == grid[4] && grid[4] == grid[5]){
+		if(grid[3] != '-' && grid[3] == grid[4] && grid[4] == grid[5]){
 			return true;
 		}
-		if(grid[6] == grid[7] && grid[7] == grid[8]){
+		if(grid[6] != '-' && grid[6] == grid[7] && grid[7] == grid[8]){
 			return true;
 		}
 		return false;
@@ -50,13 +51,13 @@ public class TicTacToe {
 
 // Checks who is winner
 	public boolean winningColumn(){
-		if(grid[0] == grid[3] && grid[3] == grid[6]){
+		if(grid[0] != '-' && grid[0] == grid[3] && grid[3] == grid[6]){
 			return true;
 		}
-		if(grid[1] == grid[4] && grid[4] == grid[7]){
+		if(grid[1] != '-' && grid[1] == grid[4] && grid[4] == grid[7]){
 			return true;
 		}
-		if(grid[2] == grid[5] && grid[5] == grid[8]){
+		if(grid[2] != '-' &&grid[2] == grid[5] && grid[5] == grid[8]){
 			return true;
 		}
 		return false;
