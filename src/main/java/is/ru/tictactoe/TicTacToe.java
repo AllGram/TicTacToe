@@ -153,7 +153,7 @@ public class TicTacToe {
             @Override
             public Object handle(Request request, Response response) 
             {
-                System.out.println("Pálmi er awesome");
+                //System.out.println("Pálmi er awesome");
                 Integer gridId = Integer.valueOf(request.queryParams("gridId"));
                 tictactoe.x = gridId;
                 if(!tictactoe.checkIfValidInput()){
@@ -167,6 +167,26 @@ public class TicTacToe {
             }
         });
 
+        post(new Route("/win") 
+        {
+            @Override
+            public Object handle(Request request, Response response) 
+            {
+                Integer gridId = Integer.valueOf(request.queryParams("gridId"));
+
+                if(tictactoe.checkForWin()){
+                    tictactoe.initializedGrid();
+                    return tictactoe.player;
+                }
+                else if(tictactoe.checkForTie()){
+                    tictactoe.initializedGrid();
+                    return " Tie";
+                }
+                else{
+                    return "keepPlaying";
+                }
+            }
+        });
 
     }
 }

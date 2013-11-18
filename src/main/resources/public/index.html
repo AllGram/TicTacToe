@@ -69,7 +69,33 @@
             else{
               $(x).val('Y');
             }
-            alert(ret);
+          }).fail(function() {
+              alert("Error");
+          });
+          event.preventDefault();
+
+       $.ajax({
+          type: "post",
+          url: "/win",
+          data: 'gridId=' + this.id
+          }).done(function(ret) 
+          {
+            if(ret == 2){
+              alert("Player one WINS!!!!");
+               $('.btn').val('-');
+               $('.btn').disabled = false;
+            }
+            if(ret == 1){
+              alert("Player two WINS!!!!");
+              $('.btn').val('-');
+              $('.btn').disabled = false;
+            }
+            if (ret == "Tie"){
+              alert("We have a TIE!!!!");
+              $('.btn').val('-');
+              $('.btn').disabled = false;
+            }
+
           }).fail(function() {
               alert("Error");
           });
