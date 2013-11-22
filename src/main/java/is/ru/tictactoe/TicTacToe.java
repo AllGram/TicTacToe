@@ -176,7 +176,12 @@ public class TicTacToe {
 
                 if(tictactoe.checkForWin()){
                     tictactoe.initializedGrid();
-                    return tictactoe.player;
+                    if(tictactoe.player == 1){
+                        return "player2";
+                    }
+                    else{
+                        return "player1";
+                    }
                 }
                 else if(tictactoe.checkForTie()){
                     tictactoe.initializedGrid();

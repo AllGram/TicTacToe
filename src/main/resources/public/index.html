@@ -114,11 +114,11 @@
           data: 'gridId=' + this.id
           }).done(function(ret) 
           {
-            if(ret == 2){
+            if(ret == "player1"){
               alert("Player one WINS!!!!");
               window.location.reload();
             }
-            if(ret == 1){
+            if(ret == "player2"){
               alert("Player two WINS!!!!");
               window.location.reload();
             }
