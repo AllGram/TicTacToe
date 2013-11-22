@@ -180,7 +180,7 @@ public class TicTacToe {
                 }
                 else if(tictactoe.checkForTie()){
                     tictactoe.initializedGrid();
-                    return " Tie";
+                    return "Tie";
                 }
                 else{
                     return "keepPlaying";
