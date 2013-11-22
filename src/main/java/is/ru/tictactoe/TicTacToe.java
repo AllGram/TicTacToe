@@ -196,7 +196,6 @@ public class TicTacToe {
                     else{
                         // player x wins
                         tictactoe.initializePlayer();
-                        tictactoe.changePlayer();
                         return "player1";
                     }
                 }
