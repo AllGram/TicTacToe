@@ -35,6 +35,13 @@ public class TicTacToe {
         return false;
     }
 
+    // initialize player
+    public void initializePlayer()
+    {
+        player = 1;
+    }
+
+
     // Checks if there is a winner in a row
 
     private boolean winningRow(){
@@ -157,12 +164,17 @@ public class TicTacToe {
                 Integer gridId = Integer.valueOf(request.queryParams("gridId"));
                 tictactoe.x = gridId;
                 if(!tictactoe.checkIfValidInput()){
-                    return 0;
+                    return "0";
                 }
                 else{
                     tictactoe.insert();
                     tictactoe.changePlayer();
-                    return tictactoe.player; 
+                    if ( tictactoe.player == 2 ){
+                        return "X";
+                    }
+                    else {
+                        return "Y";
+                    }
                 }
             }
         });
@@ -177,13 +189,19 @@ public class TicTacToe {
                 if(tictactoe.checkForWin()){
                     tictactoe.initializedGrid();
                     if(tictactoe.player == 1){
+                        // player y wins
+                        tictactoe.initializePlayer();
                         return "player2";
                     }
                     else{
+                        // player x wins
+                        tictactoe.initializePlayer();
+                        tictactoe.changePlayer();
                         return "player1";
                     }
                 }
                 else if(tictactoe.checkForTie()){
+                    tictactoe.initializePlayer();
                     tictactoe.initializedGrid();
                     return "Tie";
                 }
