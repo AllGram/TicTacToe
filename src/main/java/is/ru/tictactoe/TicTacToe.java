@@ -169,46 +169,36 @@ public class TicTacToe {
                 else{
                     tictactoe.insert();
                     tictactoe.changePlayer();
-                    if ( tictactoe.player == 2 ){
-                        return "X";
-                    }
-                    else {
-                        return "Y";
-                    }
-                }
-            }
-        });
 
-        post(new Route("/win") 
-        {
-            @Override
-            public Object handle(Request request, Response response) 
-            {
-                Integer gridId = Integer.valueOf(request.queryParams("gridId"));
-
-                if(tictactoe.checkForWin()){
-                    tictactoe.initializedGrid();
-                    if(tictactoe.player == 1){
-                        // player y wins
+                     if(tictactoe.checkForWin()){
+                        tictactoe.initializedGrid();
+                        if(tictactoe.player == 1){
+                            // player y wins
+                             tictactoe.initializePlayer();
+                             return "player2";
+                        }
+                        else{
+                            // player x wins
+                            tictactoe.initializePlayer();
+                            return "player1";
+                         }
+                     }
+                    else if(tictactoe.checkForTie()){
                         tictactoe.initializePlayer();
-                        return "player2";
+                        tictactoe.initializedGrid();
+                        return "Tie";
                     }
                     else{
-                        // player x wins
-                        tictactoe.initializePlayer();
-                        return "player1";
-                    }
-                }
-                else if(tictactoe.checkForTie()){
-                    tictactoe.initializePlayer();
-                    tictactoe.initializedGrid();
-                    return "Tie";
-                }
-                else{
-                    return "keepPlaying";
+                        if ( tictactoe.player == 2 ){
+                            return "X";
+                        }
+                        else {
+                            return "Y";
+                        }
+                    }   
+                   
                 }
             }
         });
-
     }
 }

@@ -94,23 +94,13 @@
           data: 'gridId=' + this.id
           }).done(function(ret) 
           {
+            alert(ret);
             if(ret === "X"){
               $(x).val('X');
             }
-            else if(ret === "Y"){
+            if(ret === "Y"){
               $(x).val('Y');
             }
-          }).fail(function() {
-              alert("Error");
-          });
-          event.preventDefault();
-
-       $.ajax({
-          type: "post",
-          url: "/win",
-          data: 'gridId=' + this.id
-          }).done(function(ret) 
-          {
             if(ret === "player1"){
               alert("Player one WINS!!!!");
               location.reload(true);
