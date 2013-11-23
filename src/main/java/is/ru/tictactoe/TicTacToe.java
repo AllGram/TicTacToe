@@ -154,6 +154,7 @@ public class TicTacToe {
         staticFileLocation("/public");
         setPort(Integer.valueOf(System.getenv("PORT")));
         final TicTacToe tictactoe = new TicTacToe();
+        tictactoe.initializedGrid();
 
         post(new Route("/add") 
         {
