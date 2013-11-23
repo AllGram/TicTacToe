@@ -164,6 +164,7 @@ public class TicTacToe {
                 Integer gridId = Integer.valueOf(request.queryParams("gridId"));
                 tictactoe.x = gridId;
                 if(!tictactoe.checkIfValidInput()){
+                    tictactoe.initializedGrid();
                     return "0";
                 }
                 else{
