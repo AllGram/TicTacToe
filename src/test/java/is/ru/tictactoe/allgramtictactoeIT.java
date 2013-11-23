@@ -36,7 +36,7 @@ public class allgramtictactoeIT {
 		selenium.click("id=2");
 		TimeUnit.SECONDS.sleep(1);
 		selenium.setSpeed("5000");
-		assertEquals("1!", selenium.getText("id=2"));
+		assertEquals("1!", selenium.getValue("id=2"));
 		TimeUnit.SECONDS.sleep(1);
 	}
 
