@@ -156,9 +156,16 @@ public class TicTacToe {
                          }
                      }
                     else if(tictactoe.checkForTie()){
-                        tictactoe.initializePlayer();
-                        tictactoe.initializedGrid();
-                        return "Tie";
+                        if(tictactoe.player == 1){
+                            tictactoe.initializePlayer();
+                            tictactoe.initializedGrid();
+                            return "Tie2";
+                        }
+                        else{
+                            tictactoe.initializePlayer();
+                            tictactoe.initializedGrid();
+                            return "Tie1";
+                        }
                     }
                     else{
                         if ( tictactoe.player == 2 ){
