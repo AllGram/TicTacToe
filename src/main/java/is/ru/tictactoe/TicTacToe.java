@@ -132,7 +132,6 @@ public class TicTacToe {
             @Override
             public Object handle(Request request, Response response) 
             {
-                //System.out.println("Pálmi er awesome");
                 Integer gridId = Integer.valueOf(request.queryParams("gridId"));
                 tictactoe.x = gridId;
                 if(!tictactoe.checkIfValidInput()){
