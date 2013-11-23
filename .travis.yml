@@ -1,7 +1,16 @@
 language: java
 jkd:
 - openjdk7
-deploy:
+
+install: 
+
+before_script:
+- bin/clean
+
+script: 
+- bin/deploy
+
+deploy: 
   provider: heroku
   api_key:
     secure: r6inMC/p2i1t/0DA6clYV9n2ACbKflLNU98jRyqfPyqNtlESDX54rfe4tIq104PsjdBvEWhVY3PLAURDUE56X+DMHMWtCoWae467bdlGb+XOanKt+E3U5jWeRgeIRld2yNME/9fWvkNhu7UzOOWqhR6t05dlTwljissvSSGQIPE=
