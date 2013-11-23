@@ -94,7 +94,6 @@
           data: 'gridId=' + this.id
           }).done(function(ret) 
           {
-            alert(ret);
             if(ret === "X"){
               $(x).val('X');
             }
@@ -102,18 +101,25 @@
               $(x).val('Y');
             }
             if(ret === "player1"){
+              $(x).val('X');
               alert("Player one WINS!!!!");
               location.reload(true);
             }
             if(ret === "player2"){
+              $(x).val('Y');
               alert("Player two WINS!!!!");
               location.reload(true);
             }
-            if (ret === "Tie"){
+            if (ret === "Tie1"){
+              $(x).val('X');
               alert("We have a TIE!!!!");
               location.reload(true);
             }
-
+            if (ret === "Tie2"){
+              $(x).val('Y');
+              alert("We have a TIE!!!!");
+              location.reload(true);
+            }
           }).fail(function() {
               alert("Error");
           });

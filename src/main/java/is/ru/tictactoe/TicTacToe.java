@@ -13,6 +13,7 @@ public class TicTacToe {
     char grid[];
     int player;
     
+    // constructor
     public TicTacToe() 
     {
         grid = new char[9];
@@ -20,6 +21,7 @@ public class TicTacToe {
         initializedGrid();
     }
 
+    // initialize grid
     public void initializedGrid()
     {
         for (int i = 0; i < 9; i++){
@@ -43,7 +45,6 @@ public class TicTacToe {
 
 
     // Checks if there is a winner in a row
-
     private boolean winningRow(){
         
         if(grid[0] != '-' && grid[0] == grid[1] && grid[1] == grid[2]){
@@ -103,11 +104,13 @@ public class TicTacToe {
         return true;
     }
      
+    // change player 
     public void changePlayer(){
         if (player == 1) player = 2;
         else player = 1;
     }
 
+    // insert symbol into grid
     public void insert(){
         if(player == 1){
             grid[x] = 'X';  
@@ -115,37 +118,6 @@ public class TicTacToe {
         else{
             grid[x] = 'O';
         }
-    }
-   
-    public void play(){
-        Scanner in = new Scanner(System.in);
-        boolean validInput;
-        
-        while(!checkForWin() && !checkForTie()){
-            validInput = false;
-
-            do{
-           
-            x = in.nextInt();
-            if(checkIfValidInput()){
-                insert();
-                validInput = true;
-            };
-            }while (!validInput);   
-            changePlayer();         
-        }
-
-        if(checkForWin())
-        {
-            changePlayer();
-            System.out.println();
-            System.out.println("Player " + player + " WON!!!!! ");
-        }
-        else if(checkForTie())
-        {
-            System.out.println("We have a TIE!!!!!! ");
-        }
-        in.close();
     }
     
 
@@ -160,7 +132,6 @@ public class TicTacToe {
             @Override
             public Object handle(Request request, Response response) 
             {
-                //System.out.println("Pálmi er awesome");
                 Integer gridId = Integer.valueOf(request.queryParams("gridId"));
                 tictactoe.x = gridId;
                     tictactoe.insert();
@@ -179,9 +150,16 @@ public class TicTacToe {
                             return "player1";
                          }
                     else if(tictactoe.checkForTie()){
-                        tictactoe.initializePlayer();
-                        tictactoe.initializedGrid();
-                        return "Tie";
+                        if(tictactoe.player == 1){
+                            tictactoe.initializePlayer();
+                            tictactoe.initializedGrid();
+                            return "Tie2";
+                        }
+                        else{
+                            tictactoe.initializePlayer();
+                            tictactoe.initializedGrid();
+                            return "Tie1";
+                        }
                     }
                     else{
                         if ( tictactoe.player == 2 ){
