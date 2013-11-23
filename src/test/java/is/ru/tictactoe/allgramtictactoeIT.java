@@ -40,6 +40,52 @@ public class allgramtictactoeIT {
 		TimeUnit.SECONDS.sleep(1);
 	}
 
+	@Test
+	public void testAllgramtictactoe2IT() throws Exception {
+		selenium.open("/");
+		selenium.click("id=0");
+		TimeUnit.SECONDS.sleep(1);
+		selenium.click("id=3");
+		TimeUnit.SECONDS.sleep(1);
+		selenium.click("id=1");
+		TimeUnit.SECONDS.sleep(1);
+		selenium.click("id=4");
+		TimeUnit.SECONDS.sleep(1);
+		selenium.click("id=7");
+		TimeUnit.SECONDS.sleep(1);
+		selenium.click("id=5");
+		TimeUnit.SECONDS.sleep(1);
+		selenium.setSpeed("5000");
+		assertEquals("2!", selenium.getValue("id=5"));
+		TimeUnit.SECONDS.sleep(1);
+	}
+
+	@Test
+	public void testAllgramtictactoe3IT() throws Exception {
+		selenium.open("/");
+		selenium.click("id=0");
+		TimeUnit.SECONDS.sleep(1);
+		selenium.click("id=1");
+		TimeUnit.SECONDS.sleep(1);
+		selenium.click("id=2");
+		TimeUnit.SECONDS.sleep(1);
+		selenium.click("id=4");//y
+		TimeUnit.SECONDS.sleep(1);
+		selenium.click("id=3");
+		TimeUnit.SECONDS.sleep(1);
+		selenium.click("id=5");
+		TimeUnit.SECONDS.sleep(1);
+		selenium.click("id=7");
+		TimeUnit.SECONDS.sleep(1);
+		selenium.click("id=6");
+		TimeUnit.SECONDS.sleep(1);
+		selenium.click("id=8");
+		TimeUnit.SECONDS.sleep(1);
+		selenium.setSpeed("5000");
+		assertEquals("Tie", selenium.getValue("id=8"));
+		TimeUnit.SECONDS.sleep(1);
+	}
+
 	@After
 	public void tearDown() throws Exception {
 		selenium.stop();
