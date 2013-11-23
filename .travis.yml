@@ -2,6 +2,10 @@ language: java
 jkd:
 - openjdk7
 
+before_install:
+- sudo apt-get install -y xvfb firefox
+- sudo apt-get install -y xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic
+
 install: 
 
 before_script:
@@ -9,6 +13,9 @@ before_script:
 
 script: 
 - bin/deploy
+
+after_success:
+- bin/selenium_test_xvfb
 
 deploy: 
   provider: heroku
