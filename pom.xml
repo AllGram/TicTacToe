@@ -144,7 +144,7 @@ without connecting to another server -->
           </execution>
           <execution>
             <id>jacoco-site</id>
-            <phase>package</phase>
+            <phase>test</phase>
             <goals>
               <goal>report</goal>
             </goals>
