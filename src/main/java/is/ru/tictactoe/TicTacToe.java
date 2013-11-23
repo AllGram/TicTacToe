@@ -154,7 +154,6 @@ public class TicTacToe {
         staticFileLocation("/public");
         setPort(Integer.valueOf(System.getenv("PORT")));
         final TicTacToe tictactoe = new TicTacToe();
-        tictactoe.initializedGrid();
 
         post(new Route("/add") 
         {
@@ -164,10 +163,7 @@ public class TicTacToe {
                 //System.out.println("Pálmi er awesome");
                 Integer gridId = Integer.valueOf(request.queryParams("gridId"));
                 tictactoe.x = gridId;
-                if(!tictactoe.checkIfValidInput()){
-                    return "0";
-                }
-                else{
+
                     tictactoe.insert();
                     tictactoe.changePlayer();
 
@@ -197,8 +193,6 @@ public class TicTacToe {
                             return "Y";
                         }
                     }   
-                   
-                }
             }
         });
     }
