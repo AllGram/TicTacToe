@@ -130,10 +130,14 @@ public class TicTacToe {
         post(new Route("/add") 
         {
             @Override
-            public Object handle(Request request, Response response) 
+       public Object handle(Request request, Response response)
             {
                 Integer gridId = Integer.valueOf(request.queryParams("gridId"));
                 tictactoe.x = gridId;
+                if(!tictactoe.checkIfValidInput()){
+                    return "0";
+                }
+                else{
                     tictactoe.insert();
                     tictactoe.changePlayer();
 
@@ -149,6 +153,7 @@ public class TicTacToe {
                             tictactoe.initializePlayer();
                             return "player1";
                          }
+                     }
                     else if(tictactoe.checkForTie()){
                         if(tictactoe.player == 1){
                             tictactoe.initializePlayer();
@@ -168,7 +173,7 @@ public class TicTacToe {
                         else {
                             return "Y";
                         }
-                    }   
+                    }
                    
                 }
             }
