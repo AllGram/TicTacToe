@@ -10,6 +10,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import java.util.regex.Pattern;
 import static org.apache.commons.lang3.StringUtils.join;
+import java.util.concurrent.TimeUnit;
 
 public class allgramtictactoeIT {
 	private Selenium selenium;
@@ -17,7 +18,7 @@ public class allgramtictactoeIT {
 	@Before
 	public void setUp() throws Exception {
 		WebDriver driver = new FirefoxDriver();
-		String baseUrl = "http://http://allgramtictactoe.herokuapp.com/";
+		String baseUrl = "http://allgramtictactoe.herokuapp.com/";
 		selenium = new WebDriverBackedSelenium(driver, baseUrl);
 	}
 
@@ -25,11 +26,18 @@ public class allgramtictactoeIT {
 	public void testAllgramtictactoeIT() throws Exception {
 		selenium.open("/");
 		selenium.click("id=0");
+		TimeUnit.SECONDS.sleep(1);
 		selenium.click("id=4");
+		TimeUnit.SECONDS.sleep(1);
 		selenium.click("id=1");
+		TimeUnit.SECONDS.sleep(1);
 		selenium.click("id=5");
+		TimeUnit.SECONDS.sleep(1);
 		selenium.click("id=2");
-		assertEquals("Player one WINS!!!!", selenium.getAlert());
+		TimeUnit.SECONDS.sleep(1);
+		selenium.setSpeed("5000");
+		assertEquals("1!", selenium.getText("id=2"));
+		TimeUnit.SECONDS.sleep(1);
 	}
 
 	@After

@@ -101,23 +101,19 @@
               $(x).val('Y');
             }
             if(ret === "player1"){
-              $(x).val('X');
-              alert("Player one WINS!!!!");
+              $(x).val('1!');
               location.reload(true);
             }
             if(ret === "player2"){
-              $(x).val('Y');
-              alert("Player two WINS!!!!");
+              $(x).val('2!');
               location.reload(true);
             }
             if (ret === "Tie1"){
-              $(x).val('X');
-              alert("We have a TIE!!!!");
+              $(x).val('Tie');
               location.reload(true);
             }
             if (ret === "Tie2"){
-              $(x).val('Y');
-              alert("We have a TIE!!!!");
+              $(x).val('TIE');
               location.reload(true);
             }
           }).fail(function() {
