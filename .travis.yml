@@ -2,6 +2,9 @@ language: java
 jkd:
 - openjdk7
 
+before_install: 
+- bin/greenqloud_wvfb_setup
+
 install: 
 
 before_script:
@@ -9,6 +12,9 @@ before_script:
 
 script: 
 - bin/deploy
+
+after_success:
+- bin/selenium_test_xvfb
 
 
 deploy: 
