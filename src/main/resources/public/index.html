@@ -94,7 +94,6 @@
           data: 'gridId=' + this.id
           }).done(function(ret) 
           {
-            alert(ret);
             if(ret === "X"){
               $(x).val('X');
             }
@@ -103,10 +102,12 @@
             }
             if(ret === "player1"){
               alert("Player one WINS!!!!");
+              $(x).val('X');
               location.reload(true);
             }
             if(ret === "player2"){
               alert("Player two WINS!!!!");
+              $(x).val('Y');
               location.reload(true);
             }
             if (ret === "Tie"){

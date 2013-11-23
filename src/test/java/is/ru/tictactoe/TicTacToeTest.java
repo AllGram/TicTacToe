@@ -135,7 +135,6 @@ public class TicTacToeTest {
     }
     
 
-
     // test if the input is in valid size (valid grid)
     @Test
     public void testCheckIfValidSize() {
@@ -221,5 +220,14 @@ public class TicTacToeTest {
             test.insert();
         }
         assertEquals("O", Character.toString(test.grid[4]));
+    }
+
+
+    @Test
+    public void testInitializePlayer() {
+        TicTacToe test = new TicTacToe();
+        test.changePlayer();
+        test.initializePlayer();
+        assertEquals(1, test.player);
     }
 } 
