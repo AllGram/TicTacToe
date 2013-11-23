@@ -3,8 +3,8 @@ jkd:
 - openjdk7
 
 before_install:
-- apt-get install -y xvfb firefox
-- apt-get install -y xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic
+- sudo apt-get install -y xvfb firefox
+- sudo apt-get install -y xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic --fix-missing
 
 install: 
 
