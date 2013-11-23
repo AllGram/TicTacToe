@@ -6,6 +6,7 @@ before_install:
 - bin/greenqloud_wvfb_setup
 
 install: 
+- bin/nothing
 
 before_script:
 - bin/clean
@@ -15,7 +16,6 @@ script:
 
 after_success:
 - bin/selenium_test_xvfb
-
 
 deploy: 
   provider: heroku
