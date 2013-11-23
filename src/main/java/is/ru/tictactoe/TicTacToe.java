@@ -163,10 +163,6 @@ public class TicTacToe {
                 //System.out.println("Pálmi er awesome");
                 Integer gridId = Integer.valueOf(request.queryParams("gridId"));
                 tictactoe.x = gridId;
-                if(!tictactoe.checkIfValidInput()){
-                    return "0";
-                }
-                else{
                     tictactoe.insert();
                     tictactoe.changePlayer();
 
@@ -182,7 +178,6 @@ public class TicTacToe {
                             tictactoe.initializePlayer();
                             return "player1";
                          }
-                     }
                     else if(tictactoe.checkForTie()){
                         tictactoe.initializePlayer();
                         tictactoe.initializedGrid();
