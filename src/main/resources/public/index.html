@@ -101,16 +101,24 @@
               $(x).val('Y');
             }
             if(ret === "player1"){
+<<<<<<< HEAD
               $(x).val('Anna!');
+=======
+              $(x).val('1!');
+              $('.btn').attr("disabled", "disabled");
+>>>>>>> 63853ae39c8a925a986fad401e838f579cb17e75
             }
             if(ret === "player2"){
               $(x).val('2!');
+              $('.btn').attr("disabled", "disabled");
             }
             if (ret === "Tie1"){
               $(x).val('Tie');
+              $('.btn').attr("disabled", "disabled");
             }
             if (ret === "Tie2"){
               $(x).val('Tie');
+              $('.btn').attr("disabled", "disabled");
             }
           }).fail(function() {
               alert("Error");
