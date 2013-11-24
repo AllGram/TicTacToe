@@ -13,9 +13,9 @@ before_script:
 
 script: 
 - bin/deploy
+- bin/selenium_test_xvfb
 
 after_success:
-- bin/selenium_test_xvfb
 
 deploy: 
   provider: heroku
