@@ -9,11 +9,12 @@ install:
 - bin/nothing
 
 before_script:
-- bin/selenium_test_xvfb
-
-after_script: 
 - bin/deploy
 
+script: 
+- bin/selenium_test_xvfb
+
+after_success:
 
 deploy: 
   provider: heroku
