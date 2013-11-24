@@ -101,24 +101,20 @@
               $(x).val('Y');
             }
             if(ret === "player1"){
-              $(x).val('X');
-              alert("Player one WINS!!!!");
-              location.reload(true);
+              $(x).val('1!');
+              $('.btn').attr("disabled", "disabled");
             }
             if(ret === "player2"){
-              $(x).val('Y');
-              alert("Player two WINS!!!!");
-              location.reload(true);
+              $(x).val('2!');
+              $('.btn').attr("disabled", "disabled");
             }
             if (ret === "Tie1"){
-              $(x).val('X');
-              alert("We have a TIE!!!!");
-              location.reload(true);
+              $(x).val('Tie');
+              $('.btn').attr("disabled", "disabled");
             }
             if (ret === "Tie2"){
-              $(x).val('Y');
-              alert("We have a TIE!!!!");
-              location.reload(true);
+              $(x).val('Tie');
+              $('.btn').attr("disabled", "disabled");
             }
           }).fail(function() {
               alert("Error");

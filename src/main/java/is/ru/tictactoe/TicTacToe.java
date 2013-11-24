@@ -130,7 +130,7 @@ public class TicTacToe {
         post(new Route("/add") 
         {
             @Override
-            public Object handle(Request request, Response response) 
+       public Object handle(Request request, Response response)
             {
                 Integer gridId = Integer.valueOf(request.queryParams("gridId"));
                 tictactoe.x = gridId;
@@ -173,7 +173,7 @@ public class TicTacToe {
                         else {
                             return "Y";
                         }
-                    }   
+                    }
                    
                 }
             }

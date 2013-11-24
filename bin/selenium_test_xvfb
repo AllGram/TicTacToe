@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Xvfb
+bin/xvfb start
+export DISPLAY=:99
+
+# Run tests
+export STAGING_SERVER=${STAGING_SERVER:='http://allgram.herokuapp.com'}
+mvn test-compile failsafe:integration-test failsafe:verify
+EXIT_CODE=$?
+
+# Clean up
+bin/xvfb stop
+
+exit $EXIT_CODE
