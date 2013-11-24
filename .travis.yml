@@ -6,7 +6,7 @@ before_install:
 - bin/greenqloud_wvfb_setup
 
 install: 
-- bin/nothing
+- bin/SetupStaging
 
 before_script:
 - bin/deploy
