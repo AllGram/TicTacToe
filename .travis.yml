@@ -9,10 +9,9 @@ install:
 - bin/nothing
 
 before_script:
-- bin/clean
+- bin/deploy
 
 script: 
-- bin/deploy
 - bin/selenium_test_xvfb
 
 after_success:
