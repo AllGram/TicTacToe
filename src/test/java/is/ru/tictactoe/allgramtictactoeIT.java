@@ -82,7 +82,7 @@ public class allgramtictactoeIT {
 		selenium.click("id=8");
 		TimeUnit.SECONDS.sleep(1);
 		selenium.setSpeed("5000");
-		assertEquals("Tie", selenium.getValue("id=8"));
+		assertEquals("Tie!", selenium.getValue("id=8"));
 		TimeUnit.SECONDS.sleep(1);
 	}
 
